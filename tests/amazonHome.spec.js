@@ -42,9 +42,21 @@ test ('Validar tela Amazon', async() => {
     })
 
     await test.step('clicar em Ofertas do dia', async() => {
+
+        const ofertasDoDia = page.locator('#nav-xshop > a:nth-child(4)')
         
-        await page.locator('xpath=//*[@id="CardInstance6kXxyxc7sNoEQGC8Qj4WuQ"]/a/div[2]/span/span[2]').click();
+        await ofertasDoDia.click()
         await sleep(5000)
+    })
+
+    await test.step('clicar em Exclusivo do Prime', async() => {
+
+        const exclusivoDoPrime = page.locator('xpath=//*[@id="DealsGridScrollAnchor"]/div[2]/div[5]/div/span/div/label/i')
+    
+        await exclusivoDoPrime.click()
+        await sleep(10000)
+
+
     })
 
 }); 
